@@ -7,16 +7,36 @@ curl -fsSL https://raw.githubusercontent.com/longnguyen2026/monitor-linux/main/m
 
 ### Cách sử dụng sau khi cài
 
-1. **Khi máy vừa bị treo và bật lại:**
-Không cần nhớ đường dẫn file log phức tạp, chỉ cần mở Terminal gõ:
+### 1. Kiểm tra dịch vụ có đang chạy ổn định không
+
+```bash
+sudo systemctl status sys-monitor.service
+
+```
+
+> Trạng thái hiện `active (running)` màu xanh là dịch vụ đang chạy ngầm chính xác.
+
+### 2. Kiểm tra log đã bắt đầu được ghi chưa
+
+```bash
+# Xem file log đang cập nhật trực tiếp theo thời gian thực (Ctrl + C để thoát)
+tail -f /var/log/sys_monitor/sys_freeze.log
+
+```
+
+### 3. Kiểm tra lệnh tắt xem nhanh
+
 ```bash
 check-hang
 
 ```
 
-Lệnh sẽ in ngay 35 dòng log cuối cùng kèm thời gian, lượng RAM/Swap và top tiến trình ngốn bộ nhớ nhất trước khi tắt máy.
-2. **Gỡ bỏ hoàn toàn khỏi máy trạm:**
-```bash
-sudo uninstall-monitor
+---
 
-```
+> **Lưu ý nhỏ:** Nếu chạy lệnh `curl ... | sudo bash` mà máy báo lỗi `curl: command not found` (một số bản Linux Mint cài tối giản chưa có sẵn `curl`), bạn có thể dùng `wget` thay thế:
+> ```bash
+> wget -qO- https://raw.githubusercontent.com/longnguyen2026/monitor-linux/main/monitor.sh | sudo bash
+> 
+> ```
+> 
+>
