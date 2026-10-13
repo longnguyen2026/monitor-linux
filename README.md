@@ -1,11 +1,16 @@
-### Lệnh 1 dòng duy nhất để chạy trên máy trạm
+# Lệnh 1 dòng duy nhất để chạy trên máy trạm
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/longnguyen2026/monitor-linux/main/monitor.sh | sudo bash
 
 ```
 
-### Cách sử dụng sau khi cài
+### Lệnh gỡ trên máy trạm
+```bash
+sudo uninstall-monitor
+```
+
+# Cách sử dụng sau khi cài
 
 ### 1. Kiểm tra dịch vụ có đang chạy ổn định không
 
