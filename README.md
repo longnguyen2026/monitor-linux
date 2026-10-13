@@ -1,7 +1,7 @@
 ### Lệnh 1 dòng duy nhất để chạy trên máy trạm
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/<username>/<repo>/main/install_monitor.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/longnguyen2026/monitor-linux/main/monitor.sh | sudo bash
 
 ```
 
